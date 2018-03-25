@@ -328,7 +328,7 @@ function! android#emulatorbin()
     return g:android_emulator
   endif
 
-  let g:android_emulator = android#homePath() . "/tools/emulator"
+  let g:android_emulator = android#homePath() . "/emulator/emulator"
 
   if(!executable(g:android_emulator))
     if executable("emulator")
