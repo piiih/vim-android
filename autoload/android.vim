@@ -1,3 +1,8 @@
+function! android#logu(msg)
+  redraw
+  echomsg a:msg
+endfunction
+
 function! android#logi(msg)
   redraw
   echomsg "vim-android: " . a:msg
