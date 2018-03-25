@@ -106,7 +106,7 @@ endfunction
 function! gradle#install(device, mode)
   let l:old_serial = $ANDROID_SERIAL
   let $ANDROID_SERIAL=a:device
-  let l:result = call("gradle#run", ["install" . android#capitalize(a:mode)])
+  let l:result = system(gradle#bin() . " install" . android#capitalize(a:mode))
   let $ANDROID_SERIAL = l:old_serial
 endfunction
 
