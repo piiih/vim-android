@@ -367,7 +367,6 @@ function! android#emulator()
   " If only one device is found automatically install to it.
   if len(l:avds) == 1
     let l:avd = strpart(l:avds[0], 3)
-    execute 'silent !' . android#emulatorbin() . " -avd " . l:avd . " &> /dev/null &"
     redraw!
   endif
 
