@@ -151,13 +151,13 @@ function! android#install(mode)
   let l:devices = adb#selectDevice()
 
   for l:device in l:devices
-    call android#logi("Install " . a:mode . " " . l:device)
+    call android#logu("Installing apk...")
     let l:result = gradle#install(l:device, a:mode)
     if (l:result[0] > 0) || (l:result[1] > 0)
       call android#logi("Install failed")
       return
     else
-      call android#logi ("")
+      call android#logu ("")
     endif
   endfor
 endfunction
